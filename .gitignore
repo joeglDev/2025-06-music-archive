@@ -1,0 +1,11 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+
+/2025-06-music-archive/utils/.env
+/2025-06-music-archive/Database/data
+Database/data/seed-data.csv
+2025-06-music-archive/Database/data/seed-data.csv
+.idea
