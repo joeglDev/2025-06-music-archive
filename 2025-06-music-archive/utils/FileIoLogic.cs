@@ -20,7 +20,6 @@ public class FileIoLogic
 
     public AlbumRow[] ConvertRowsToAlbumRows(IEnumerable<string[]> rows)
     {
-        int result;
         return rows.Select(v => new AlbumRow(
             v[0],
             v[1],

@@ -30,8 +30,8 @@ public class DatabaseSeeder : InitialiseDatabase
     DateAdded TIMESTAMP,
     MediaCondition VARCHAR(50),
     sleeveCondition VARCHAR(50),
-    owner VARCHAR(50),
-    genre VARCHAR(50)
+    Owner VARCHAR(50),
+    Genre VARCHAR(50)
 );";
 
         await conn.ExecuteAsync(createTableQuery);
@@ -54,8 +54,8 @@ public class DatabaseSeeder : InitialiseDatabase
     mediaCondition, sleeveCondition, owner, genre
     )
         SELECT 
-    @catalog, @artist, @title, @recordLabel, @Format, @rating,
-    @releaseYear, @releaseId, @collectionFolder, @dateAdded,
+    @catalog, @artist, @title, @label, @Format, @rating,
+    @released, @releaseId, @collectionFolder, @dateAdded,
     @MediaCondition, @sleeveCondition, @owner, @Genre
         WHERE NOT EXISTS (
             SELECT 1 FROM albums WHERE title = @title

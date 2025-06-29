@@ -1,18 +1,18 @@
 namespace _2025_06_music_archive.Models;
 
 public record AlbumRow(
-    string catalog,
-    string artist,
-    string title,
-    string recordLabel,
+    string Catalog,
+    string Artist,
+    string Title,
+    string Label,
     string Format,
-    string rating,
-    int? releaseYear,
-    string releaseId,
-    string collectionFolder,
-    DateTime? dateAdded,
+    string Rating,
+    int? Released,
+    string ReleaseId,
+    string CollectionFolder,
+    DateTime? DateAdded,
     string MediaCondition,
-    string sleeveCondition,
-    string owner,
+    string SleeveCondition,
+    string Owner,
     string Genre
 );
