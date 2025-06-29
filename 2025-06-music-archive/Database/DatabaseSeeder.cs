@@ -49,14 +49,17 @@ public class DatabaseSeeder : InitialiseDatabase
 
         var insertDataSql = @"
         INSERT INTO albums (
-            catalog, artist, title, label, format, rating,
-            released, releaseId, collectionFolder, dateAdded,
-            mediaCondition, sleeveCondition, owner, genre
-        ) VALUES (
-            @catalog, @artist, @title, @recordLabel, @Format, @rating,
-            @releaseYear, @releaseId, @collectionFolder, @dateAdded,
-            @MediaCondition, @sleeveCondition, @owner, @Genre
-        )";
+    catalog, artist, title, label, format, rating,
+    released, releaseId, collectionFolder, dateAdded,
+    mediaCondition, sleeveCondition, owner, genre
+    )
+        SELECT 
+    @catalog, @artist, @title, @recordLabel, @Format, @rating,
+    @releaseYear, @releaseId, @collectionFolder, @dateAdded,
+    @MediaCondition, @sleeveCondition, @owner, @Genre
+        WHERE NOT EXISTS (
+            SELECT 1 FROM albums WHERE title = @title
+                );";
 
         await conn.ExecuteAsync(insertDataSql, albumRows);
     }
