@@ -13,6 +13,6 @@ var allAlbums = await dbService.SelectAllAlbums();
 
 // generate statistics
 var statisticsService = new StatisticsService(allAlbums);
-statisticsService.GetStatistics();
+var collectionStatistics = statisticsService.GetStatistics();
 
 // save statistics to a text file
